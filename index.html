@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Dark mode toggle button */
+        .dark-toggle {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            background: #222;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.2s, color 0.2s;
+        }
+        .dark-toggle:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
+    <div class="quiz-container">
+        <h1>Quiz Application</h1>
+        <div id="quiz-box">
+            <div id="question"></div>
+            <div id="options"></div>
+            <div id="feedback"></div>
+            <button id="next-btn" disabled>Next</button>
+        </div>
+        <div id="score-box" class="hidden"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+    // Dark mode toggle logic
+    const toggleBtn = document.getElementById('dark-toggle');
+    toggleBtn.onclick = function() {
+        document.body.classList.toggle('dark');
+        if(document.body.classList.contains('dark')) {
+            toggleBtn.textContent = '☀️ Light Mode';
+        } else {
+            toggleBtn.textContent = '🌙 Dark Mode';
+        }
+    };
+    </script>
+</body>
+</html>
